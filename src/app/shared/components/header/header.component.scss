@@ -1,8 +1,19 @@
 .rightborder {
-    padding-right: 20px;
+  padding-right: 20px;
   border-right: 1px solid #000;
+
+  @media(max-device-width:996px) {
+    border-right: none;
+    padding-right: 0;
+  }
 }
 
 .avatar {
   height: 20px;
+}
+
+.bell-image {
+  @media(max-device-width:996px) {
+    margin-top: 20px;
+  }
 }
