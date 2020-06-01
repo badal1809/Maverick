@@ -1,7 +1,7 @@
 .container-fluid {
   padding: 0;
   z-index: 9999;
-  margin-top: 80px;
+  margin: 0px;
   .carousel-item {
     &.active, &.carousel-item-right, &.carousel-item-next {
       display: flex !important;
