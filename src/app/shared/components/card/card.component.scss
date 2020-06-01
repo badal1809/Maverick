@@ -4,7 +4,7 @@
 .card {
   display: inline-block;
   margin: 1% 1.5%;
-
+  justify-content: space-evenly;
   @media(min-device-width:992px) {
     width: calc(90% / 3);
   }

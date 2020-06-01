@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\pages",
+    "\\src\\app\\shared",
+    "\\src\\app\\shared\\components",
+    "\\src\\app\\shared\\components\\header"
+  ],
+  "SelectedNode": "\\src\\app\\shared\\components\\header\\header.component.scss",
+  "PreviewInSolutionExplorer": false
+}
