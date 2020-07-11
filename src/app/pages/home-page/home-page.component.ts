@@ -1,25 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-//import { Hero } from '../../modules/heroes/shared/hero.model';
-//import { AppConfig } from '../../configs/app.config';
-import { Observable } from 'rxjs';
-import { defaultIfEmpty, map } from 'rxjs/operators';
-//import { HeroService } from '../../modules/core/services/hero.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { HomeService } from '../../core/services/home.service';
+import { ICardDataboard } from '../../models/ICardDataboard';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
 
-export class HomePageComponent implements OnInit {
- // heroes$: Observable<Hero[]>;
-
-  constructor() {//private heroService: HeroService) {
+export class HomePageComponent implements OnInit, OnDestroy {
+  destroy$: Subject<boolean> = new Subject<boolean>();
+  public cardDataboard: ICardDataboard[];
+  constructor(private homeService: HomeService) {
   }
 
   ngOnInit() {
-    //this.heroes$ = this.heroService.getHeroes().pipe(
-    //  map((heroes) => heroes.slice(0, AppConfig.topHeroesLimit)),
-    //  defaultIfEmpty([])
-    //);
+    this.homeService.getCardList().pipe(takeUntil(this.destroy$)).subscribe((data: ICardDataboard[]) => {
+      this.cardDataboard = data;
+      console.log(data);
+    });
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next(true);
+    // Unsubscribe from the subject
+    this.destroy$.unsubscribe();
   }
 }

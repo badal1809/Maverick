@@ -1,16 +1,10 @@
 <div>
   <app-carousel></app-carousel>
-  <div class="outer-container">
+  <div class="outer-container" *ngFor="let item of cardDataboard">
     <hr class="style12">
-    <h1>Power BI experts</h1>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <h1>Case Studies</h1>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
+    <h1>{{ item.title }}</h1>
+    <div *ngFor="let card of item.cards" class="d-inline">
+      <app-card [cardData] ="card"></app-card>
+    </div>
   </div>
 </div>

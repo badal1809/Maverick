@@ -14,4 +14,10 @@
     margin: 1% 0%;
   }
 
+  .card-description {
+    height: 144px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }

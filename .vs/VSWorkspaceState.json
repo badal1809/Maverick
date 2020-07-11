@@ -3,11 +3,13 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\pages",
-    "\\src\\app\\shared",
-    "\\src\\app\\shared\\components",
-    "\\src\\app\\shared\\components\\header"
+    "\\src\\app\\Core",
+    "\\src\\app\\Core\\services",
+    "\\src\\app\\shared\\components\\card",
+    "\\src\\app\\shared\\components\\footer",
+    "\\src\\app\\shared\\components\\header",
+    "\\src\\assets\\images"
   ],
-  "SelectedNode": "\\src\\app\\shared\\components\\header\\header.component.scss",
+  "SelectedNode": "\\browserslist",
   "PreviewInSolutionExplorer": false
 }
