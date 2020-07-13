@@ -1,0 +1,45 @@
+<div *ngIf="isLoading">
+  <loader type="large"></loader>
+</div>
+<div *ngIf="!isLoading">
+  <app-carousel></app-carousel>
+  <div data-grid="col-12" class="region-overview">
+
+    <div>
+      <div class="overview-content">
+        <div class="pageText">
+          <h2 *ngIf="contentText" class="c-heading-4 x-m-b-2x" [innerHtml]="contentTitle"></h2>
+          <div *ngIf="contentText" [innerHtml]="contentText"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container-padding">
+      <hr class="overview-separator">
+    </div>
+    <div class="mt-4">
+      <div class="d-flex justify-content-between container-padding">
+        <h2 class="div-content-heading priorities-text pb-3 pb-sm-0">
+          Overview
+        </h2>
+
+      </div>
+      <div class="row container-padding">
+        <div data-grid="col-3 stack2" class="mt-n2 refiner-section x-p-r-2x ">
+          <div class="c-content-toggle">
+            <h3 class="x-m-b-4x c-heading-5">COUNTRIES</h3>
+            <ul class="c-list f-bare f-lean show-more-btn" id="contentToggleUnorderedListId" data-f-expanded="false">
+              <li *ngFor="let country of countryList" class="country-item">
+                <a class="c-hyperlink" [routerLink]="country">country</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div data-grid="col-9" class="pt-1 pl-sm-4">
+          <div *ngIf="isCardDataLoading" class="pb-5">
+            <loader type="large"></loader>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

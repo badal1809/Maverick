@@ -5,12 +5,16 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CardComponent } from './components/card/card.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { BannerComponent } from './components/banner/banner.component';
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
     CarouselComponent,
-    CardComponent
+    CardComponent,
+    LoaderComponent,
+    BannerComponent
   ],
   imports: [
     NgbModule,
@@ -20,7 +24,9 @@ import { CardComponent } from './components/card/card.component';
     HeaderComponent,
     FooterComponent,
     CarouselComponent,
-    CardComponent
+    CardComponent,
+    LoaderComponent,
+    BannerComponent
   ]
 })
 export class SharedModule { }

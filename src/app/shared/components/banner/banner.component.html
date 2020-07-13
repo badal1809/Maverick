@@ -1,0 +1,24 @@
+<div *ngIf="content">
+  <div class="m-banner">
+    <div>
+      <section role="presentation" class="m-banner-item f-medium f-x-left f-y-center theme-dark f-mask-20 f-short">
+        <picture>
+          <source *ngfor="let sourceset of content.sourceset"
+                  [media]="sourceset.mediaquery"
+                  [srcset]="sourceset.imagesource" />
+          <img [srcset]="content.ImageSource"
+               [src]="content.ImageSource"
+               [alt]="content.AltText"
+               role="none" />
+        </picture>
+        <div class="banner-heading">
+          <div *ngIf="content.Heading" class="banner-content">
+            <h1 class="c-heading-2 content-header">
+              {{ content.Heading }}
+            </h1>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
